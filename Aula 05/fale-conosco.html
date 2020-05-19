@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <title>Tudo Sobre Google Class</title>
-    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+    <link rel="stylesheet" type="text/css" href="_css/form.css"/>
 </head>
 
-<script language="javascript" src="_javascript/funcoes.js">
-   
+<script language="javascript" src="_javascript/funcoes.js"/>
+
 </script>
 
 <body>
@@ -33,12 +34,12 @@
                         onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="index.html">Home</a></li>
                     <li onmouseover="mudaFoto('_imagens/especificacoes.png')"
                         onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a
-                        href="specs.html">Especificações</a></li>
+                            href="specs.html">Especificações</a></li>
                     <li onmouseover="mudaFoto('_imagens/fotos.png')"
                         onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="fotos.html">Fotos</a></li>
                     <li onmouseover="mudaFoto('_imagens/multimidia.png')"
                         onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a
-                        href="multimidia.html">Multimídia</a></li>
+                            href="multimidia.html">Multimídia</a></li>
                     <li onmouseover="mudaFoto('_imagens/contato.png')"
                         onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="fale-conosco.html">Fale
                             conosco</a></li>
@@ -48,41 +49,67 @@
             <!--Cabeçalho acvaba aqui-->
         </header>
 
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
+        <section id="corpo-full">
 
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
 
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
-
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
-
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
+                    <hgroup></hgroup>
+                    <h3>Fale Conosco > &nbsp;&nbsp;&nbsp;&nbsp; Contato</h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+                    </hgroup>
+                </header>
 
 
-[BOTÃO ENVIAR]
 
-<footer id="rodape">
 
-    <p>Copyright &copy; 2013 - by Gustavo Guanabara<br />
-        Facebook | Twitter</p>
-</footer>
+                <form>
+                    <fieldset id="usuario">
+                        <legend>Identificação do Usuário</legend>
+                        <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="3" placeholder="Nome Completo"/></p>
+                        <p>Senha: <input type="password" name="tSenha" id="cSenha" maxlength="8" size="8"/></p>
+                        <p>E-mail: <input type="email" name="tEmail" id="cEmail" size="20" maxlength="40px"></p>
+                       <fieldset><legend>Sexo:
+                        <input type="radio" name="tSexo" id="cMasc" checked/><label for="cMasc">Masculino</label>
+                        <input type="radio" name="tSexo" id="cFem"/><label for="cFem">Feminino</label></legend></fieldset>
+                        <p>Data de Nascimento: <input type="date" name="tDate" id="cDate"></p>
+                    </fieldset>
+
+                    <fieldset id="endereco">
+                        <legend>Endereço do Usuário</legend>
+                        Logradouro:
+                        Número:
+                        Estado:
+                        Cidade:
+                    </fieldset>
+
+                    <fieldset id="menssagem">
+                        <legend>Mensagem do Usuário</legend>
+                        Grau de Urgência:
+                        Mensagem:
+                    </fieldset>
+                    <fieldset id="pedido">
+                        <legend>Quero um Google Glass</legend>
+                        Gostaria de adquirir um Google Glass quando disponível
+                        Cor:
+                        Quantidade:
+                        Preço Total: R$
+                    </fieldset>
+
+
+                    [BOTÃO ENVIAR]
+                </form>
+            </article>
+        </section>
+
+        <footer id="rodape">
+
+            <p>Copyright &copy; 2013 - by Gustavo Guanabara<br />
+                Facebook | Twitter</p>
+        </footer>
+    </div>
+</body>
+
+</html>
