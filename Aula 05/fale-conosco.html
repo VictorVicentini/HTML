@@ -4,12 +4,20 @@
 <head>
     <meta charset="UTF-8" />
     <title>Tudo Sobre Google Class</title>
-    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
-    <link rel="stylesheet" type="text/css" href="_css/form.css"/>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="_css/form.css" />
 </head>
 
-<script language="javascript" src="_javascript/funcoes.js"/>
+<script language="javascript" src="_javascript/funcoes.js">
 
+</script>
+
+<script>
+    function calc_total() {
+        var qtd = parseInt(document.getElementById('cQtd').value)
+        total = qtd * 1500
+        document.getElementById('cTotal').value = total
+    }
 </script>
 
 <body>
@@ -65,41 +73,75 @@
 
 
 
-                <form>
+                <form method="GET" name="fContato" action="mailton:victorvicentini@yahoo.com.br"
+                    oninput="calc_total();">
                     <fieldset id="usuario">
                         <legend>Identificação do Usuário</legend>
-                        <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="3" placeholder="Nome Completo"/></p>
-                        <p>Senha: <input type="password" name="tSenha" id="cSenha" maxlength="8" size="8"/></p>
+                        <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20"
+                                maxlength="3" placeholder="Nome Completo" /></p>
+                        <p>Senha: <input type="password" name="tSenha" id="cSenha" maxlength="8" size="8" /></p>
                         <p>E-mail: <input type="email" name="tEmail" id="cEmail" size="20" maxlength="40px"></p>
-                       <fieldset><legend>Sexo:
-                        <input type="radio" name="tSexo" id="cMasc" checked/><label for="cMasc">Masculino</label>
-                        <input type="radio" name="tSexo" id="cFem"/><label for="cFem">Feminino</label></legend></fieldset>
+                        <fieldset id="sexo">
+                            <legend>Sexo:</legend>
+                                <p><input type="radio" name="tSexo" id="cMasc" checked /><label
+                                    for="cMasc">Masculino</label></p>
+                                <p><input type="radio" name="tSexo" id="cFem" /><label for="cFem">Feminino</label></p>
+                        </fieldset>
                         <p>Data de Nascimento: <input type="date" name="tDate" id="cDate"></p>
                     </fieldset>
 
                     <fieldset id="endereco">
                         <legend>Endereço do Usuário</legend>
-                        Logradouro:
-                        Número:
-                        Estado:
-                        Cidade:
+                        <p>Logradouro:</p>
+                        <p>Número:</p>
+                        <p><label for="cEst">Estado</label>
+                            <select name="tEst" id="cEst">
+                                <optgroup label="Região 1">
+                                    <option value="AM">Amazonas</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="PA">Pará</option>
+                                </optgroup>
+                                <option value="TO">Tocantins</option>
+                                <option value="RO" selected>Rondônia</option>
+                                <option value="AC">Acre</option>
+                            </select></p>
+                        <p><label for="cCid">Cidade:</label>
+                            <input type="text" maxlength="20" size="20" name="tCid" id="cCid"
+                                placeholder="Digite sua Cidade" list="cidades" />
+                            <datalist id="cidades">
+                                <option value="Pereira Barreto"></option>
+                                <option value="Ilha Solteira"></option>
+                                <option value="Presidente Prudente"></option>
+
+                            </datalist>
+
+                        </p>
                     </fieldset>
 
-                    <fieldset id="menssagem">
+                    <fieldset id="mensagem">
                         <legend>Mensagem do Usuário</legend>
-                        Grau de Urgência:
-                        Mensagem:
+                        <p><label for="cUrg">Grau de Urgência:</label>
+                            Min<input type="range" name="tUrg" id="cUrg" max="10" min="0" step="2">Max</p>
+                        <p><label for="cMsg">Mensagem:</label>
+                            <textarea name="tMsg" id="cMsg" cols="35" rows="5"
+                                placeholder="Deixe aqui sua mensagem"></textarea></p>
                     </fieldset>
                     <fieldset id="pedido">
                         <legend>Quero um Google Glass</legend>
-                        Gostaria de adquirir um Google Glass quando disponível
-                        Cor:
-                        Quantidade:
-                        Preço Total: R$
+                        <p><input type="checkbox" name="tPed" id="cPed" checked> <label for="cPed">Gostaria de adquirir
+                                um Google Glass quando disponível</label></p>
+                        <p><label for="cCor">Cor:</label>
+                            <input type="color" name="tColor" id="cColor" value="#00ffcc"></p>
+                        <p><label for="cQtd">Quantidade:</label>
+                            <input type="number" min="0" max="5" name="tQtd" id="cQtd" value="0"></p>
+                        <p><label for="cTotal">Preço Total: R$</label>
+                            <input type="text" name="tTotal" id="cTotal" placeholder="Total a Pagar" readonly></p>
                     </fieldset>
 
 
-                    [BOTÃO ENVIAR]
+                    <!--<input type="submit" value="Enviar"/>-->
+                    <input type="image" name="tEnviar" src="_imagens/botao-enviar.png" />
                 </form>
             </article>
         </section>
